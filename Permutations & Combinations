@@ -7,7 +7,7 @@
 given_letter=input()
 given_condition=input()
 condition=given_condition.lower()
-if condition == "always be together":
+if condition == "vowels always be together":
     
     word=given_letter.lower()
     length_of_word=len(word)
@@ -75,7 +75,7 @@ if condition == "always be together":
     
     
 # For Vowels never be together
-elif condition =="never be together":
+elif condition =="vowels never be together":
     word=given_letter.lower()
 # numerator FOR never be together
     length_of_word=len(word)
@@ -205,7 +205,7 @@ elif condition =="arrange the letters":
     
     
 #odd place arrangement    
-elif condition == "arrange in odd places":
+elif condition == "arrange the vowels in odd places":
     word= given_letter.lower()
     length_of_word=len(word)
     number_of_even_places=0
@@ -274,7 +274,7 @@ elif condition == "arrange in odd places":
 
 
 #Even place arrangement
-elif condition == "arrange in even places":
+elif condition == "arrange the vowels in even places":
     word= given_letter.lower()
     length_of_word=len(word)
     number_of_even_places=0
