@@ -23,12 +23,12 @@ def finding_number_of_ways_arranging(given_word, length_of_the_word, list_of_rem
     else:
         pass
 import math
-given_word = input().lower()
-condition = input().lower()
+given_word = input("Enter the word :").lower()
+condition = input("Enter the condition like arrange the letters:").lower()
 length_of_the_word = len(given_word)
 
 if condition == "arrange the letters":
-    print("Given condition is " + condition + " :")
+    print("Given condition is " + condition.upper() )
     removing_similar_letters = set(given_word)
     list_of_removing_similar_letters = sorted(list(removing_similar_letters))
     finding_number_of_ways_arranging(given_word, length_of_the_word, list_of_removing_similar_letters)
