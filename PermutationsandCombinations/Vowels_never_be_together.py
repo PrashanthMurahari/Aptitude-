@@ -98,27 +98,22 @@ def finding_number_of_ways_arranging(given_word, length_of_the_word, list_of_rem
 import math
 
 given_word = input("Enter the word:").lower()
-condition = input("Enter the condition like vowels never be together:").lower()
 length_of_the_word = len(given_word)
 all_vowels = ["a", "e", "i", "o", "u"]
-if condition == "vowels never be together":
-    print("Given condition is " + condition.upper())
-    removing_similar_letters = set(given_word)
-    list_of_removing_similar_letters = sorted(list(removing_similar_letters))
-    number_of_ways_of_arranging_the_given_word = finding_number_of_ways_arranging(given_word, length_of_the_word,
-                                                                                  list_of_removing_similar_letters)
 
-    vowels_and_consonants_together = separating_vowels_and_consonants(given_word, all_vowels)
-    print("Consonants : " + vowels_and_consonants_together[0])
-    print("Vowels : " + vowels_and_consonants_together[1])
-    number_of_ways_of_arranging_the_consonants = number_of_ways_of_arranging_consonants(vowels_and_consonants_together)
-    number_of_ways_of_arranging_the_vowels = number_of_ways_of_arranging_vowels(vowels_and_consonants_together)
-    number_of_ways_of_arranging_the_word_that_vowels_always_be_together = number_of_ways_of_arranging_the_consonants * number_of_ways_of_arranging_the_vowels
-    print("Total Number of ways of arranging the word that vowels always be together : " + str(int(number_of_ways_of_arranging_the_word_that_vowels_always_be_together)))
-    number_of_ways_of_arranging_the_word_that_vowels_never_be_together = number_of_ways_of_arranging_the_given_word - number_of_ways_of_arranging_the_word_that_vowels_always_be_together
-    print("Total number of ways of arranging the word that vowels never be together = Total number of ways of arranging the word - Total Number of ways of arranging the word that vowels always be together")
-    print("Total number of ways of arranging the word that vowels never be together = " + str(
-        int(number_of_ways_of_arranging_the_word_that_vowels_never_be_together)))
+print("Given word is : "+given_word)
+removing_similar_letters = set(given_word)
+list_of_removing_similar_letters = sorted(list(removing_similar_letters))
+number_of_ways_of_arranging_the_given_word = finding_number_of_ways_arranging(given_word, length_of_the_word,list_of_removing_similar_letters)
 
-else:
-    print("Enter a valid input!!")
+vowels_and_consonants_together = separating_vowels_and_consonants(given_word, all_vowels)
+print("Consonants : " + vowels_and_consonants_together[0])
+print("Vowels : " + vowels_and_consonants_together[1])
+number_of_ways_of_arranging_the_consonants = number_of_ways_of_arranging_consonants(vowels_and_consonants_together)
+number_of_ways_of_arranging_the_vowels = number_of_ways_of_arranging_vowels(vowels_and_consonants_together)
+number_of_ways_of_arranging_the_word_that_vowels_always_be_together = number_of_ways_of_arranging_the_consonants * number_of_ways_of_arranging_the_vowels
+print("Total Number of ways of arranging the word that vowels always be together : " + str(int(number_of_ways_of_arranging_the_word_that_vowels_always_be_together)))
+number_of_ways_of_arranging_the_word_that_vowels_never_be_together = number_of_ways_of_arranging_the_given_word - number_of_ways_of_arranging_the_word_that_vowels_always_be_together
+print("Total number of ways of arranging the word that vowels never be together = Total number of ways of arranging the word - Total Number of ways of arranging the word that vowels always be together")
+print("Total number of ways of arranging the word that vowels never be together = " + str(int(number_of_ways_of_arranging_the_word_that_vowels_never_be_together)))
+

@@ -68,12 +68,11 @@ def separating_odd_even_places(length_of_word):
 import math
 
 given_word = input("Enter the word:").lower()
-condition = input("Enter the condition like vowels in odd places:").lower()
 all_vowels = ['a', 'e', 'i', 'o', 'u']
 length_of_word = len(given_word)
 
 print("Given word : " + given_word.upper())
-print("Given condition : " + condition.upper())
+
 
 number_of_even_odd_places = separating_odd_even_places(length_of_word)
 vowels_and_consonants = separating_vowels_and_consonants(given_word, all_vowels)

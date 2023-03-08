@@ -78,22 +78,17 @@ def separating_vowels_and_consonants(given_word, all_vowels):
 import math
 
 given_word = input("Enter the word:").lower()
-condition = input("Enter the condition like vowels always be together:").lower()
 length_of_the_word = len(given_word)
 all_vowels = ["a", "e", "i", "o", "u"]
 
-if condition == "vowels always be together":
-    print("The Given condition is : " + condition.upper())
-    vowels_and_consonants_together = separating_vowels_and_consonants(given_word, all_vowels)
-    print("Consonants : " + vowels_and_consonants_together[0])
-    print("Vowels : " + vowels_and_consonants_together[1])
 
-    number_of_ways_of_arranging_the_consonants = number_of_ways_of_arranging_consonants(vowels_and_consonants_together)
-    number_of_ways_of_arranging_the_vowels = number_of_ways_of_arranging_vowels(vowels_and_consonants_together)
-    print("Total Number of ways of arranging the word that vowels always be together : " + str(
-        number_of_ways_of_arranging_the_consonants) + " * " + str(number_of_ways_of_arranging_the_vowels))
-    print("Total Number of ways of arranging the word that vowels always be together : " + str(
-        int(number_of_ways_of_arranging_the_consonants * number_of_ways_of_arranging_the_vowels)))
 
-else:
-    print("Enter a valid input!!")
+vowels_and_consonants_together = separating_vowels_and_consonants(given_word, all_vowels)
+print("Consonants : " + vowels_and_consonants_together[0])
+print("Vowels : " + vowels_and_consonants_together[1])
+
+number_of_ways_of_arranging_the_consonants = number_of_ways_of_arranging_consonants(vowels_and_consonants_together)
+number_of_ways_of_arranging_the_vowels = number_of_ways_of_arranging_vowels(vowels_and_consonants_together)
+print("Total Number of ways of arranging the word that vowels always be together : " + str(number_of_ways_of_arranging_the_consonants) + " * " + str(number_of_ways_of_arranging_the_vowels))
+print("Total Number of ways of arranging the word that vowels always be together : " + str(int(number_of_ways_of_arranging_the_consonants * number_of_ways_of_arranging_the_vowels)))
+
