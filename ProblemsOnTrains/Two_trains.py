@@ -9,5 +9,5 @@ elif x==2:
     import Finding_Speed_and_Time_of_two_trains
     print(Finding_Speed_and_Time_of_two_trains)
 else:
-    import Two_trains_and_pole
-    print(Two_trains_and_pole)
+    import Two_trains_and_pole_and_bridge
+    print(Two_trains_and_pole_and_bridge)
