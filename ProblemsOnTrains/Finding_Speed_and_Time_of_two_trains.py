@@ -54,8 +54,8 @@ def calculating_equal_speeds_of_two_trains(total_length_of_two_trains, time_take
         print("Speed of each train = " + str(round(speed_of_two_trains / 2, 2)) + " m/s")
 
 
-def calculating_time_to_cross_each_other(total_speed_of_two_trains, total_length_of_two_trains):
-    speed_condition = input("Enter the measurement of speed in kmph or metres:").lower()
+def calculating_time_to_cross_each_other(total_speed_of_two_trains, total_length_of_two_trains,speed_condition):
+
 
     if speed_condition == "kmph":
         time_taken_to_each_other = total_length_of_two_trains / (total_speed_of_two_trains * 5 / 18)
@@ -96,21 +96,24 @@ def main(speed_of_two_trains):
     return total_speed_of_two_trains
 
 
-given_situation = input("Enter the input like tow trains:").lower()
+
 need_to_find = input("Enter the input what need to find:").lower()
 length_of_two_trains = list(map(float, input("Enter the lengths of two trains:").split()))
 total_length_of_two_trains = length_of_two_trains[0] + length_of_two_trains[1]
 
-if given_situation == "two trains" and need_to_find == "time":
+if  need_to_find == "time":
     speed_of_two_trains = list(map(float, input("Enter the speeds of two trains:").split()))
+    speed_condition = input("Enter the measurement of speed in kmph or metres:").lower()
     total_speed_of_two_trains = main(speed_of_two_trains)
-    calculating_time_to_cross_each_other(total_speed_of_two_trains, total_length_of_two_trains)
+    calculating_time_to_cross_each_other(total_speed_of_two_trains, total_length_of_two_trains, speed_condition)
 
-elif given_situation == "two trains" and need_to_find == "equal speed of two trains":
+elif  need_to_find == "speed of two trains":
     time_taken_to_each_other = float(input("Enter the time taken to cross each other:"))
     calculating_equal_speeds_of_two_trains(total_length_of_two_trains, time_taken_to_each_other)
 
-elif given_situation == "two trains" and need_to_find == "speed of one train":
+elif  need_to_find == "speed of one train":
     speed_of_one_train = float(input("Enter the speed of one train:"))
     time_taken_to_each_other = float(input("Enter the time taken to cross each other:"))
     calculating_speed_of_another_train(total_length_of_two_trains, time_taken_to_each_other, speed_of_one_train)
+else:
+    print("Enter valid input!!")

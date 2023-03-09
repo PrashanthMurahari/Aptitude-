@@ -1,5 +1,5 @@
-def calculating_lengths_of_two_trains(total_speed_of_two_trains, time_taken_to_cross):
-    speed_condition = input("Enter the speed measurement given in kmph or metres:").lower()
+def calculating_lengths_of_two_trains(total_speed_of_two_trains, time_taken_to_cross, speed_condition):
+
 
     if speed_condition == "kmph":
         lengths_of_two_trains=((total_speed_of_two_trains * 5/18) * time_taken_to_cross)
@@ -17,8 +17,8 @@ def calculating_lengths_of_two_trains(total_speed_of_two_trains, time_taken_to_c
         print("Lengths of two trains = " + str(round(lengths_of_two_trains,2)))
         print("Length of each train = " + str(round(lengths_of_two_trains/2,2)))
 
-def calculating_length_of_one_train(total_speed_of_two_trains, time_taken_to_cross, length_of_one_train):
-    speed_condition = input("Enter the speed measurement given in kmph or metres:").lower()
+def calculating_length_of_one_train(total_speed_of_two_trains, time_taken_to_cross, length_of_one_train, speed_condition):
+
 
     if speed_condition == "kmph":
         lengths_of_another_train = (((total_speed_of_two_trains * 5/18) * time_taken_to_cross) - length_of_one_train)
@@ -60,17 +60,19 @@ def main(speed_of_two_trains):
             print("Speed of train B = " + str(speed_of_train_B))
     return total_speed_of_two_trains
 
-given_situation = input("Enter the type of problem like Two trains:").lower()
+
 need_to_find = input("Enter what need to find ? :").lower()
-if given_situation == "two trains" and need_to_find == "length of two trains":
+if  need_to_find == "length of two trains":
     speed_of_two_trains = list(map(float,input("Enter the speeds of two trains:").split()))
     time_taken_to_cross = float(input("Enter the time taken to cross:"))
+    speed_condition = input("Enter the speed measurement given in kmph or metres:").lower()
     total_speed_of_two_trains = main(speed_of_two_trains)
-    calculating_lengths_of_two_trains(total_speed_of_two_trains, time_taken_to_cross)
+    calculating_lengths_of_two_trains(total_speed_of_two_trains, time_taken_to_cross,speed_condition)
 
-elif given_situation == "two trains" and need_to_find == "length of one train":
+elif  need_to_find == "length of one train":
     speed_of_two_trains = list(map(float,input("Enter the speeds of two trains:").split()))
     time_taken_to_cross = float(input("Enter the time taken to cross:"))
     length_of_one_train = float(input("Enter the length of the train:"))
+    speed_condition = input("Enter the speed measurement given in kmph or metres:").lower()
     total_speed_of_two_trains = main(speed_of_two_trains)
-    calculating_length_of_one_train(total_speed_of_two_trains, time_taken_to_cross, length_of_one_train)
+    calculating_length_of_one_train(total_speed_of_two_trains, time_taken_to_cross, length_of_one_train,speed_condition)
